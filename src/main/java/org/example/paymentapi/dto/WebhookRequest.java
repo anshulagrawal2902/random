@@ -1,4 +1,4 @@
-package com.example.payment.dto;
+package org.example.paymentapi.dto;
 
 import lombok.Data;
 

@@ -6,10 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -26,13 +22,53 @@ public class Payment {
     @Column(length = 2048)
     private String encryptedCardNumber;
 
-    public String getFirstName(){
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
         return this.firstName;
     }
 
-    public String setFirstName(String name){
-        return this.firstName = name;
+    public void setFirstName(String name) {
+        this.firstName = name;
     }
 
-    private LocalDateTime createdAt = LocalDateTime.now();
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getZipCode() {
+        return this.zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public String getEncryptedCardNumber() {
+        return encryptedCardNumber;
+    }
+
+    public void setEncryptedCardNumber(String encryptedCardNumber) {
+        this.encryptedCardNumber = encryptedCardNumber;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 }
