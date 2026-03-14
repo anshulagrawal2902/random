@@ -6,6 +6,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -21,6 +25,14 @@ public class Payment {
 
     @Column(length = 2048)
     private String encryptedCardNumber;
+
+    public String getFirstName(){
+        return this.firstName;
+    }
+
+    public String setFirstName(String name){
+        return this.firstName = name;
+    }
 
     private LocalDateTime createdAt = LocalDateTime.now();
 }
